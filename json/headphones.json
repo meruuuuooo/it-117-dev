@@ -1,0 +1,102 @@
+[
+	{
+		"name": "HP HyperX Cloud",
+		"model": "HyperX Cloud",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Not wireless.",
+		"manufacturer": "HP",
+		"price": null,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/1.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Logitech PRO X 2 LIGHTSPEED",
+		"model": "PRO X 2 LIGHTSPEED",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "Logitech",
+		"price": 236.75,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/2.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Beyerdynamic DT990 Premium Limited-Edition",
+		"model": "DT990 Premium Limited-Edition",
+		"description": "Circumaural open-back headphones without a microphone. Wired.",
+		"manufacturer": "Beyerdynamic",
+		"price": 159,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/3.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Corsair VOID RGB ELITE",
+		"model": "VOID RGB ELITE",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "Corsair",
+		"price": 79.98,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/4.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "SteelSeries Arctis Nova 7",
+		"model": "Arctis Nova 7",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "SteelSeries",
+		"price": 173.71,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/5.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "SteelSeries Arctis 1",
+		"model": "Arctis 1",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "SteelSeries",
+		"price": 87.24,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/6.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Logitech G432",
+		"model": "G432",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wired.",
+		"manufacturer": "Logitech",
+		"price": 42.99,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/7.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Sony XM5",
+		"model": "XM5",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "Sony",
+		"price": 398,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/8.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "HP HyperX Cloud Alpha",
+		"model": "HyperX Cloud Alpha",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wired.",
+		"manufacturer": "HP",
+		"price": 74.48,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/9.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Astro A50 + Base Station",
+		"model": "A50 + Base Station",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless, includes base station.",
+		"manufacturer": "Astro",
+		"price": 229.99,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/10.jpg",
+		"category": "Headphones"
+	}
+]

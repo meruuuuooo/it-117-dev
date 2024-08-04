@@ -1,0 +1,102 @@
+[
+	{
+		"name": "LG 65EP5G-B",
+		"model": "65EP5G-B",
+		"description": "65-inch OLED monitor with 4K resolution, 120Hz refresh rate, and a 0.1ms response time.",
+		"manufacturer": "LG",
+		"price": 8499,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/1.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "KOORUI 24E3",
+		"model": "24E3",
+		"description": "24-inch IPS monitor with Full HD resolution and a 165Hz refresh rate.",
+		"manufacturer": "KOORUI",
+		"price": 115.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/2.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus TUF Gaming VG27AQ",
+		"model": "TUF Gaming VG27AQ",
+		"description": "27-inch IPS monitor with 1440p resolution and a 165Hz refresh rate.",
+		"manufacturer": "Asus",
+		"price": 299.89,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/3.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "AOC C27G2Z",
+		"model": "C27G2Z",
+		"description": "27-inch VA monitor with Full HD resolution and a 240Hz refresh rate.",
+		"manufacturer": "AOC",
+		"price": 179.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/4.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "MSI G244F",
+		"model": "G244F",
+		"description": "23.8-inch IPS monitor with Full HD resolution and a 170Hz refresh rate.",
+		"manufacturer": "MSI",
+		"price": 104.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/5.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Samsung Odyssey Neo G95NC",
+		"model": "Odyssey Neo G95NC",
+		"description": "57-inch VA monitor with 8K resolution and a 240Hz refresh rate.",
+		"manufacturer": "Samsung",
+		"price": 1767.37,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/6.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "MSI G272QPF",
+		"model": "G272QPF",
+		"description": "27-inch IPS monitor with 1440p resolution and a 170Hz refresh rate.",
+		"manufacturer": "MSI",
+		"price": 219.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/7.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus ROG Swift Pro PG248QP",
+		"model": "ROG Swift Pro PG248QP",
+		"description": "24.1-inch TN monitor with Full HD resolution and a 540Hz refresh rate.",
+		"manufacturer": "Asus",
+		"price": 881.57,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/8.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus TUF Gaming VG249Q1A",
+		"model": "TUF Gaming VG249Q1A",
+		"description": "23.8-inch IPS monitor with Full HD resolution and a 165Hz refresh rate.",
+		"manufacturer": "Asus",
+		"price": 181.39,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/9.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus ROG Swift PG32UQX",
+		"model": "ROG Swift PG32UQX",
+		"description": "32-inch IPS monitor with 4K resolution, 144Hz refresh rate, and a 4ms response time.",
+		"manufacturer": "Asus",
+		"price": 1889.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/10.jpg",
+		"category": "Monitor"
+	}
+]

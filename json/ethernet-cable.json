@@ -1,0 +1,73 @@
+[
+    {
+      "name": "Cat5 Ethernet Cable",
+      "model": "Cat5",
+      "description": "Basic Ethernet cable suitable for standard networking needs.",
+      "manufacturer": "Generic",
+      "price": 2.99,
+      "quantityInStock": 500,
+      "image": "public/images/ethernet-cable/1.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat5e Ethernet Cable",
+      "model": "Cat5e",
+      "description": "Enhanced version of Cat5, offering better performance and less crosstalk.",
+      "manufacturer": "Generic",
+      "price": 3.99,
+      "quantityInStock": 400,
+      "image": "public/images/ethernet-cable/2.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat6 Ethernet Cable",
+      "model": "Cat6",
+      "description": "High-performance cable ideal for Gigabit Ethernet.",
+      "manufacturer": "Generic",
+      "price": 5.99,
+      "quantityInStock": 300,
+      "image": "public/images/ethernet-cable/3.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat6a Ethernet Cable",
+      "model": "Cat6a",
+      "description": "Augmented Cat6 with higher bandwidth, suitable for 10 Gigabit Ethernet.",
+      "manufacturer": "Generic",
+      "price": 7.99,
+      "quantityInStock": 200,
+      "image": "public/images/ethernet-cable/4.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat7 Ethernet Cable",
+      "model": "Cat7",
+      "description": "High-performance cable with advanced shielding, suitable for data centers and high-speed applications.",
+      "manufacturer": "Generic",
+      "price": 9.99,
+      "quantityInStock": 150,
+      "image": "public/images/ethernet-cable/5.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat7a Ethernet Cable",
+      "model": "Cat7a",
+      "description": "Augmented Cat7 with higher frequency capabilities, suitable for high-performance networking.",
+      "manufacturer": "Generic",
+      "price": 12.99,
+      "quantityInStock": 100,
+      "image": "public/images/ethernet-cable/6.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat8 Ethernet Cable",
+      "model": "Cat8",
+      "description": "The latest and highest performing cable, designed for data centers and high-speed networking with very short cable runs.",
+      "manufacturer": "Generic",
+      "price": 19.99,
+      "quantityInStock": 50,
+      "image": "public/images/ethernet-cable/7.jpg",
+      "category": "Ethernet Cable"
+    }
+  ]
+  

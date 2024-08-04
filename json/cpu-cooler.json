@@ -1,0 +1,103 @@
+[
+    {
+      "name": "Thermalright Peerless Assassin 120 SE",
+      "model": "Peerless Assassin 120 SE",
+      "description": "High-performance CPU air cooler with dual tower design and six heat pipes.",
+      "manufacturer": "Thermalright",
+      "price": 33.9,
+      "quantityInStock": 100,
+      "image": "public/images/cpu-cooler/1.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "NZXT Kraken Elite 360 RGB",
+      "model": "Kraken Elite 360 RGB",
+      "description": "High-end 360mm liquid cooler with customizable RGB lighting.",
+      "manufacturer": "NZXT",
+      "price": 273.99,
+      "quantityInStock": 50,
+      "image": "public/images/cpu-cooler/2.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "Deepcool GAMMAXX AG400 ARGB",
+      "model": "GAMMAXX AG400 ARGB",
+      "description": "Affordable CPU air cooler with RGB lighting and good thermal performance.",
+      "manufacturer": "Deepcool",
+      "price": 29.99,
+      "quantityInStock": 200,
+      "image": "public/images/cpu-cooler/3.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "Corsair iCUE H150i ELITE CAPELLIX XT",
+      "model": "iCUE H150i ELITE CAPELLIX XT",
+      "description": "High-performance 360mm liquid cooler with customizable RGB lighting.",
+      "manufacturer": "Corsair",
+      "price": 189.99,
+      "quantityInStock": 60,
+      "image": "public/images/cpu-cooler/4.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "Cooler Master MASTERLIQUID ML240L RGB V2",
+      "model": "MASTERLIQUID ML240L RGB V2",
+      "description": "240mm liquid cooler with RGB lighting and quiet operation.",
+      "manufacturer": "Cooler Master",
+      "price": 99.99,
+      "quantityInStock": 80,
+      "image": "public/images/cpu-cooler/5.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "Noctua NH-D15 chromax.black",
+      "model": "NH-D15 chromax.black",
+      "description": "Premium dual-tower CPU cooler with quiet operation and all-black design.",
+      "manufacturer": "Noctua",
+      "price": 119.95,
+      "quantityInStock": 40,
+      "image": "public/images/cpu-cooler/6.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "NZXT Kraken 240",
+      "model": "Kraken 240",
+      "description": "240mm liquid cooler with customizable RGB lighting.",
+      "manufacturer": "NZXT",
+      "price": 120.99,
+      "quantityInStock": 90,
+      "image": "public/images/cpu-cooler/7.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "Thermalright Phantom Spirit 120 SE",
+      "model": "Phantom Spirit 120 SE",
+      "description": "High-performance CPU air cooler with dual tower design.",
+      "manufacturer": "Thermalright",
+      "price": 35.9,
+      "quantityInStock": 110,
+      "image": "public/images/cpu-cooler/8.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "Deepcool AK620 ZERO DARK",
+      "model": "AK620 ZERO DARK",
+      "description": "High-performance CPU air cooler with dual tower design and dark aesthetic.",
+      "manufacturer": "Deepcool",
+      "price": 61.98,
+      "quantityInStock": 75,
+      "image": "public/images/cpu-cooler/9.jpg",
+      "category": "CPU Cooler"
+    },
+    {
+      "name": "ARCTIC Liquid Freezer III",
+      "model": "Liquid Freezer III",
+      "description": "High-performance 360mm liquid cooler with integrated VRM fan.",
+      "manufacturer": "ARCTIC",
+      "price": 116.99,
+      "quantityInStock": 65,
+      "image": "public/images/cpu-cooler/10.jpg",
+      "category": "CPU Cooler"
+    }
+  ]
+  

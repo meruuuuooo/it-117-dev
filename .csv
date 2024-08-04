@@ -1,0 +1,11 @@
+name,model,description,manufacturer,category,price,quantityInStock,image
+"AMD Ryzen 7 7800X3D","Ryzen 7 7800X3D","8-core, 16-thread CPU with 4.2 GHz base clock and 5 GHz boost clock.","AMD","CPU",339,50,"public/images/cpu/1.jpg"
+"AMD Ryzen 5 7600X","Ryzen 5 7600X","6-core, 12-thread CPU with 4.7 GHz base clock and 5.3 GHz boost clock.","AMD","CPU",204.99,75,"public/images/cpu/2.jpg"
+"AMD Ryzen 5 5600X","Ryzen 5 5600X","6-core, 12-thread CPU with 3.7 GHz base clock and 4.6 GHz boost clock.","AMD","CPU",144.31,120,"public/images/cpu/3.jpg"
+"AMD Ryzen 5 7600","Ryzen 5 7600","6-core, 12-thread CPU with 3.8 GHz base clock and 5.1 GHz boost clock.","AMD","CPU",185,100,"public/images/cpu/4.jpg"
+"Intel Core i9-14900K","Core i9-14900K","24-core, 32-thread CPU with 3.2 GHz base clock and 6 GHz boost clock.","Intel","CPU",544.99,30,"public/images/cpu/5.jpg"
+"Intel Core i7-14700K","Core i7-14700K","20-core, 28-thread CPU with 3.4 GHz base clock and 5.6 GHz boost clock.","Intel","CPU",399.99,60,"public/images/cpu/6.jpg"
+"Intel Core i5-12400F","Core i5-12400F","6-core, 12-thread CPU with 2.5 GHz base clock and 4.4 GHz boost clock.","Intel","CPU",128,90,"public/images/cpu/7.jpg"
+"AMD Ryzen 5 3600","Ryzen 5 3600","6-core, 12-thread CPU with 3.6 GHz base clock and 4.2 GHz boost clock.","AMD","CPU",84,150,"public/images/cpu/8.jpg"
+"AMD Ryzen 7 7700X","Ryzen 7 7700X","8-core, 16-thread CPU with 4.5 GHz base clock and 5.4 GHz boost clock.","AMD","CPU",288.81,70,"public/images/cpu/9.jpg"
+"AMD Ryzen 9 7950X3D","Ryzen 9 7950X3D","16-core, 32-thread CPU with 4.2 GHz base clock and 5.7 GHz boost clock.","AMD","CPU",564,40,"public/images/cpu/10.jpg"
