@@ -1,0 +1,473 @@
+[
+    {
+      "name": "Cat5 Ethernet Cable",
+      "model": "Cat5",
+      "description": "Basic Ethernet cable suitable for standard networking needs.",
+      "manufacturer": "Generic",
+      "price": 2.99,
+      "quantityInStock": 500,
+      "image": "public/images/ethernet-cable/1.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat5e Ethernet Cable",
+      "model": "Cat5e",
+      "description": "Enhanced version of Cat5, offering better performance and less crosstalk.",
+      "manufacturer": "Generic",
+      "price": 3.99,
+      "quantityInStock": 400,
+      "image": "public/images/ethernet-cable/2.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat6 Ethernet Cable",
+      "model": "Cat6",
+      "description": "High-performance cable ideal for Gigabit Ethernet.",
+      "manufacturer": "Generic",
+      "price": 5.99,
+      "quantityInStock": 300,
+      "image": "public/images/ethernet-cable/3.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat6a Ethernet Cable",
+      "model": "Cat6a",
+      "description": "Augmented Cat6 with higher bandwidth, suitable for 10 Gigabit Ethernet.",
+      "manufacturer": "Generic",
+      "price": 7.99,
+      "quantityInStock": 200,
+      "image": "public/images/ethernet-cable/4.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat7 Ethernet Cable",
+      "model": "Cat7",
+      "description": "High-performance cable with advanced shielding, suitable for data centers and high-speed applications.",
+      "manufacturer": "Generic",
+      "price": 9.99,
+      "quantityInStock": 150,
+      "image": "public/images/ethernet-cable/5.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat7a Ethernet Cable",
+      "model": "Cat7a",
+      "description": "Augmented Cat7 with higher frequency capabilities, suitable for high-performance networking.",
+      "manufacturer": "Generic",
+      "price": 12.99,
+      "quantityInStock": 100,
+      "image": "public/images/ethernet-cable/6.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+      "name": "Cat8 Ethernet Cable",
+      "model": "Cat8",
+      "description": "The latest and highest performing cable, designed for data centers and high-speed networking with very short cable runs.",
+      "manufacturer": "Generic",
+      "price": 19.99,
+      "quantityInStock": 50,
+      "image": "public/images/ethernet-cable/7.jpg",
+      "category": "Ethernet Cable"
+    },
+    {
+        "name": "Thermalright Peerless Assassin 120 SE",
+        "model": "Peerless Assassin 120 SE",
+        "description": "High-performance CPU air cooler with dual tower design and six heat pipes.",
+        "manufacturer": "Thermalright",
+        "price": 33.9,
+        "quantityInStock": 100,
+        "image": "public/images/cpu-cooler/1.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "NZXT Kraken Elite 360 RGB",
+        "model": "Kraken Elite 360 RGB",
+        "description": "High-end 360mm liquid cooler with customizable RGB lighting.",
+        "manufacturer": "NZXT",
+        "price": 273.99,
+        "quantityInStock": 50,
+        "image": "public/images/cpu-cooler/2.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "Deepcool GAMMAXX AG400 ARGB",
+        "model": "GAMMAXX AG400 ARGB",
+        "description": "Affordable CPU air cooler with RGB lighting and good thermal performance.",
+        "manufacturer": "Deepcool",
+        "price": 29.99,
+        "quantityInStock": 200,
+        "image": "public/images/cpu-cooler/3.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "Corsair iCUE H150i ELITE CAPELLIX XT",
+        "model": "iCUE H150i ELITE CAPELLIX XT",
+        "description": "High-performance 360mm liquid cooler with customizable RGB lighting.",
+        "manufacturer": "Corsair",
+        "price": 189.99,
+        "quantityInStock": 60,
+        "image": "public/images/cpu-cooler/4.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "Cooler Master MASTERLIQUID ML240L RGB V2",
+        "model": "MASTERLIQUID ML240L RGB V2",
+        "description": "240mm liquid cooler with RGB lighting and quiet operation.",
+        "manufacturer": "Cooler Master",
+        "price": 99.99,
+        "quantityInStock": 80,
+        "image": "public/images/cpu-cooler/5.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "Noctua NH-D15 chromax.black",
+        "model": "NH-D15 chromax.black",
+        "description": "Premium dual-tower CPU cooler with quiet operation and all-black design.",
+        "manufacturer": "Noctua",
+        "price": 119.95,
+        "quantityInStock": 40,
+        "image": "public/images/cpu-cooler/6.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "NZXT Kraken 240",
+        "model": "Kraken 240",
+        "description": "240mm liquid cooler with customizable RGB lighting.",
+        "manufacturer": "NZXT",
+        "price": 120.99,
+        "quantityInStock": 90,
+        "image": "public/images/cpu-cooler/7.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "Thermalright Phantom Spirit 120 SE",
+        "model": "Phantom Spirit 120 SE",
+        "description": "High-performance CPU air cooler with dual tower design.",
+        "manufacturer": "Thermalright",
+        "price": 35.9,
+        "quantityInStock": 110,
+        "image": "public/images/cpu-cooler/8.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "Deepcool AK620 ZERO DARK",
+        "model": "AK620 ZERO DARK",
+        "description": "High-performance CPU air cooler with dual tower design and dark aesthetic.",
+        "manufacturer": "Deepcool",
+        "price": 61.98,
+        "quantityInStock": 75,
+        "image": "public/images/cpu-cooler/9.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+        "name": "ARCTIC Liquid Freezer III",
+        "model": "Liquid Freezer III",
+        "description": "High-performance 360mm liquid cooler with integrated VRM fan.",
+        "manufacturer": "ARCTIC",
+        "price": 116.99,
+        "quantityInStock": 65,
+        "image": "public/images/cpu-cooler/10.jpg",
+        "category": "CPU Cooler"
+      },
+      {
+		"name": "AMD Ryzen 7 7800X3D",
+		"model": "Ryzen 7 7800X3D",
+		"description": "8-core, 16-thread CPU with 4.2 GHz base clock and 5 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 339,
+		"quantityInStock": 50,
+		"image": "public/images/cpu/1.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "AMD Ryzen 5 7600X",
+		"model": "Ryzen 5 7600X",
+		"description": "6-core, 12-thread CPU with 4.7 GHz base clock and 5.3 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 204.99,
+		"quantityInStock": 75,
+		"image": "public/images/cpu/2.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "AMD Ryzen 5 5600X",
+		"model": "Ryzen 5 5600X",
+		"description": "6-core, 12-thread CPU with 3.7 GHz base clock and 4.6 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 144.31,
+		"quantityInStock": 120,
+		"image": "public/images/cpu/3.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "AMD Ryzen 5 7600",
+		"model": "Ryzen 5 7600",
+		"description": "6-core, 12-thread CPU with 3.8 GHz base clock and 5.1 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 185,
+		"quantityInStock": 100,
+		"image": "public/images/cpu/4.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "Intel Core i9-14900K",
+		"model": "Core i9-14900K",
+		"description": "24-core, 32-thread CPU with 3.2 GHz base clock and 6 GHz boost clock.",
+		"manufacturer": "Intel",
+		"price": 544.99,
+		"quantityInStock": 30,
+		"image": "public/images/cpu/5.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "Intel Core i7-14700K",
+		"model": "Core i7-14700K",
+		"description": "20-core, 28-thread CPU with 3.4 GHz base clock and 5.6 GHz boost clock.",
+		"manufacturer": "Intel",
+		"price": 399.99,
+		"quantityInStock": 60,
+		"image": "public/images/cpu/6.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "Intel Core i5-12400F",
+		"model": "Core i5-12400F",
+		"description": "6-core, 12-thread CPU with 2.5 GHz base clock and 4.4 GHz boost clock.",
+		"manufacturer": "Intel",
+		"price": 128,
+		"quantityInStock": 90,
+		"image": "public/images/cpu/7.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "AMD Ryzen 5 3600",
+		"model": "Ryzen 5 3600",
+		"description": "6-core, 12-thread CPU with 3.6 GHz base clock and 4.2 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 84,
+		"quantityInStock": 150,
+		"image": "public/images/cpu/8.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "AMD Ryzen 7 7700X",
+		"model": "Ryzen 7 7700X",
+		"description": "8-core, 16-thread CPU with 4.5 GHz base clock and 5.4 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 288.81,
+		"quantityInStock": 70,
+		"image": "public/images/cpu/9.jpg",
+		"category": "CPU"
+	},
+	{
+		"name": "AMD Ryzen 9 7950X3D",
+		"model": "Ryzen 9 7950X3D",
+		"description": "16-core, 32-thread CPU with 4.2 GHz base clock and 5.7 GHz boost clock.",
+		"manufacturer": "AMD",
+		"price": 564,
+		"quantityInStock": 40,
+		"image": "public/images/cpu/10.jpg",
+		"category": "CPU"
+	},
+    {
+		"name": "HP HyperX Cloud",
+		"model": "HyperX Cloud",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Not wireless.",
+		"manufacturer": "HP",
+		"price": null,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/1.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Logitech PRO X 2 LIGHTSPEED",
+		"model": "PRO X 2 LIGHTSPEED",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "Logitech",
+		"price": 236.75,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/2.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Beyerdynamic DT990 Premium Limited-Edition",
+		"model": "DT990 Premium Limited-Edition",
+		"description": "Circumaural open-back headphones without a microphone. Wired.",
+		"manufacturer": "Beyerdynamic",
+		"price": 159,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/3.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Corsair VOID RGB ELITE",
+		"model": "VOID RGB ELITE",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "Corsair",
+		"price": 79.98,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/4.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "SteelSeries Arctis Nova 7",
+		"model": "Arctis Nova 7",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "SteelSeries",
+		"price": 173.71,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/5.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "SteelSeries Arctis 1",
+		"model": "Arctis 1",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "SteelSeries",
+		"price": 87.24,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/6.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Logitech G432",
+		"model": "G432",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wired.",
+		"manufacturer": "Logitech",
+		"price": 42.99,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/7.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Sony XM5",
+		"model": "XM5",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless.",
+		"manufacturer": "Sony",
+		"price": 398,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/8.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "HP HyperX Cloud Alpha",
+		"model": "HyperX Cloud Alpha",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wired.",
+		"manufacturer": "HP",
+		"price": 74.48,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/9.jpg",
+		"category": "Headphones"
+	},
+	{
+		"name": "Astro A50 + Base Station",
+		"model": "A50 + Base Station",
+		"description": "Circumaural closed-back headphones with a built-in microphone. Wireless, includes base station.",
+		"manufacturer": "Astro",
+		"price": 229.99,
+		"quantityInStock": 0,
+		"image": "public/images/headphones/10.jpg",
+		"category": "Headphones"
+	},
+    {
+		"name": "LG 65EP5G-B",
+		"model": "65EP5G-B",
+		"description": "65-inch OLED monitor with 4K resolution, 120Hz refresh rate, and a 0.1ms response time.",
+		"manufacturer": "LG",
+		"price": 8499,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/1.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "KOORUI 24E3",
+		"model": "24E3",
+		"description": "24-inch IPS monitor with Full HD resolution and a 165Hz refresh rate.",
+		"manufacturer": "KOORUI",
+		"price": 115.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/2.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus TUF Gaming VG27AQ",
+		"model": "TUF Gaming VG27AQ",
+		"description": "27-inch IPS monitor with 1440p resolution and a 165Hz refresh rate.",
+		"manufacturer": "Asus",
+		"price": 299.89,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/3.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "AOC C27G2Z",
+		"model": "C27G2Z",
+		"description": "27-inch VA monitor with Full HD resolution and a 240Hz refresh rate.",
+		"manufacturer": "AOC",
+		"price": 179.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/4.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "MSI G244F",
+		"model": "G244F",
+		"description": "23.8-inch IPS monitor with Full HD resolution and a 170Hz refresh rate.",
+		"manufacturer": "MSI",
+		"price": 104.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/5.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Samsung Odyssey Neo G95NC",
+		"model": "Odyssey Neo G95NC",
+		"description": "57-inch VA monitor with 8K resolution and a 240Hz refresh rate.",
+		"manufacturer": "Samsung",
+		"price": 1767.37,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/6.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "MSI G272QPF",
+		"model": "G272QPF",
+		"description": "27-inch IPS monitor with 1440p resolution and a 170Hz refresh rate.",
+		"manufacturer": "MSI",
+		"price": 219.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/7.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus ROG Swift Pro PG248QP",
+		"model": "ROG Swift Pro PG248QP",
+		"description": "24.1-inch TN monitor with Full HD resolution and a 540Hz refresh rate.",
+		"manufacturer": "Asus",
+		"price": 881.57,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/8.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus TUF Gaming VG249Q1A",
+		"model": "TUF Gaming VG249Q1A",
+		"description": "23.8-inch IPS monitor with Full HD resolution and a 165Hz refresh rate.",
+		"manufacturer": "Asus",
+		"price": 181.39,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/9.jpg",
+		"category": "Monitor"
+	},
+	{
+		"name": "Asus ROG Swift PG32UQX",
+		"model": "ROG Swift PG32UQX",
+		"description": "32-inch IPS monitor with 4K resolution, 144Hz refresh rate, and a 4ms response time.",
+		"manufacturer": "Asus",
+		"price": 1889.99,
+		"quantityInStock": 0,
+		"image": "public/images/monitor/10.jpg",
+		"category": "Monitor"
+	}
+  ]
+  

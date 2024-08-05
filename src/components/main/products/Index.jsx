@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import {doc, deleteDoc } from "firebase/firestore";
-import { db } from "../../../config/firestore";
-import ImportDataButton from "./importDataToFirestore";
+// import {doc, deleteDoc } from "firebase/firestore";
+// import { db } from "../../../config/firestore";
+// import ImportDataButton from "./importDataToFirestore";
 
 import Swal from "sweetalert2";
-import Modal from "./Modal";
+import Modal from "./AddModal";
 
-const Products = ({products, setProducts, getProducts}) => {
+const Products = ({ products, setProducts, getProducts }) => {
 	const [selectedCategory, setSelectedCategory] = useState("All");
 	const [search, setSearch] = useState("");
 	const [checkedItems, setCheckedItems] = useState([]);
@@ -56,8 +56,16 @@ const Products = ({products, setProducts, getProducts}) => {
 
 	const handleDelete = async (id) => {
 		try {
-			await deleteDoc(doc(db, "products", id));
-			getProducts();
+			// Send DELETE request to JSON-server
+			const response = await fetch(`http://localhost:3000/products/${id}`, {
+				method: "DELETE",
+			});
+
+			if (response.ok) {
+				getProducts(); // Refresh the product list
+			} else {
+				throw new Error("Failed to delete product");
+			}
 		} catch (error) {
 			console.log("Error removing document: ", error);
 		}
@@ -65,39 +73,45 @@ const Products = ({products, setProducts, getProducts}) => {
 
 	const handleDeleteSelected = async () => {
 		const result = await Swal.fire({
-			title: 'Are you sure?',
-			text: 'This action cannot be undone!',
-			icon: 'warning',
+			title: "Are you sure?",
+			text: "This action cannot be undone!",
+			icon: "warning",
 			showCancelButton: true,
-			confirmButtonColor: '#3085d6',
-			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, delete it!',
-			cancelButtonText: 'Cancel'
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+			cancelButtonText: "Cancel",
 		});
-	
+
 		if (result.isConfirmed) {
 			try {
+				// Send DELETE requests htmlFor all selected items
 				await Promise.all(
-					checkedItems.map((id) => deleteDoc(doc(db, "products", id)))
+					checkedItems.map((id) =>
+						fetch(`http://localhost:3000/products/${id}`, {
+							method: "DELETE",
+						})
+					)
 				);
+
 				setCheckedItems([]);
 				getProducts();
+
 				Swal.fire(
-					'Deleted!',
-					'Your selected products have been deleted.',
-					'success'
+					"Deleted!",
+					"Your selected products have been deleted.",
+					"success"
 				);
 			} catch (error) {
 				console.log("Error removing documents: ", error);
 				Swal.fire(
-					'Error!',
-					'There was an error deleting the products.',
-					'error'
+					"Error!",
+					"There was an error deleting the products.",
+					"error"
 				);
 			}
 		}
 	};
-	
 
 	const handleCheckAllBox = (event) => {
 		const isChecked = event.target.checked;
@@ -114,10 +128,6 @@ const Products = ({products, setProducts, getProducts}) => {
 			}
 		});
 	};
-
-	const handleUpdate = (id) => () => {
-		console.log("Update product with id: ", id);
-	}
 
 	return (
 		<>
@@ -260,22 +270,30 @@ const Products = ({products, setProducts, getProducts}) => {
 														</a>
 														<div className="dropdown-menu dropdown-menu-end">
 															<ul className="link-list-opt no-bdr">
-															<li className={checkedItems.length === 0 ? "disabled" : ""}>
-																<a
-																	href="#"
-																	onClick={(e) => {
-																		if (checkedItems.length > 0) {
-																			handleDeleteSelected();
-																		} else {
-																			e.preventDefault(); // Prevent the link from being clicked if no items are selected
-																		}
-																	}}
-																	className={checkedItems.length === 0 ? "disabled-link" : ""}
+																<li
+																	className={
+																		checkedItems.length === 0 ? "disabled" : ""
+																	}
 																>
-																	<em className="icon ni ni-trash"></em>
-																	<span>Remove Selected</span>
-																</a>
-															</li>
+																	<a
+																		href="#"
+																		onClick={(e) => {
+																			if (checkedItems.length > 0) {
+																				handleDeleteSelected();
+																			} else {
+																				e.preventDefault(); // Prevent the link from being clicked if no items are selected
+																			}
+																		}}
+																		className={
+																			checkedItems.length === 0
+																				? "disabled-link"
+																				: ""
+																		}
+																	>
+																		<em className="icon ni ni-trash"></em>
+																		<span>Remove Selected</span>
+																	</a>
+																</li>
 															</ul>
 														</div>
 													</div>
@@ -287,8 +305,7 @@ const Products = ({products, setProducts, getProducts}) => {
 									{products.length < 1 ? (
 										<div className="nk-tb-item">
 											<div className="nk-tb-col nk-tb-col-check">
-												<div className="custom-control custom-control-sm custom-checkbox notext">
-												</div>
+												<div className="custom-control custom-control-sm custom-checkbox notext"></div>
 											</div>
 											<div className="nk-tb-col tb-col-sm">
 												<span className="tb-product">
@@ -358,12 +375,6 @@ const Products = ({products, setProducts, getProducts}) => {
 																</a>
 																<div className="dropdown-menu dropdown-menu-end">
 																	<ul className="link-list-opt no-bdr">
-																		<li onClick={handleUpdate(product.id)} >
-																			<a href="#">
-																				<em className="icon ni ni-edit"></em>
-																				<span>Edit Product</span>
-																			</a>
-																		</li>
 																		<li>
 																			<a href="#">
 																				<em className="icon ni ni-eye"></em>
@@ -371,10 +382,24 @@ const Products = ({products, setProducts, getProducts}) => {
 																			</a>
 																		</li>
 																		<li
-																			onClick={() => checkedItems.length > 0 && handleDelete(product.id)}
-																			className={checkedItems.length === 0 ? "disabled" : ""}
+																			onClick={() =>
+																				checkedItems.length > 0 &&
+																				handleDelete(product.id)
+																			}
+																			className={
+																				checkedItems.length === 0
+																					? "disabled"
+																					: ""
+																			}
 																		>
-																			<a href="#" className={checkedItems.length === 0 ? "disabled-link" : ""}>
+																			<a
+																				href="#"
+																				className={
+																					checkedItems.length === 0
+																						? "disabled-link"
+																						: ""
+																				}
+																			>
 																				<em className="icon ni ni-trash"></em>
 																				<span>Remove Selected</span>
 																			</a>
@@ -390,7 +415,6 @@ const Products = ({products, setProducts, getProducts}) => {
 									)}
 								</div>
 							</div>
-							{/* pagination */}
 						</div>
 					</div>
 				</div>

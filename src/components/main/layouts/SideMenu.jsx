@@ -36,14 +36,14 @@ const SideMenu = ({ setSelectedMenu, setIsAuthenticated }) => {
                                   </li>
                                   <li onClick={() =>handleMenu("Pos")} className="nk-menu-item">
                                       <a href="#" className="nk-menu-link">
-                                          <span className="nk-menu-icon"><em className="icon ni ni-bag-fill"></em></span>
+                                          <span className="nk-menu-icon"><em className="icon ni ni-cart-fill"></em></span>
                                           <span className="nk-menu-text">POS</span>
                                       </a>
                                   </li>
-                                  <li className="nk-menu-item">
+                                  <li onClick={() => handleMenu("Orders")} className="nk-menu-item">
                                       <a href="#" className="nk-menu-link">
-                                          <span className="nk-menu-icon"><em className="icon ni ni-cart-fill"></em></span>
-                                          <span className="nk-menu-text">Cart</span>
+                                          <span className="nk-menu-icon"><em className="icon ni ni-bag-fill"></em></span>
+                                          <span className="nk-menu-text">Orders</span>
                                       </a>
                                   </li>
                                   <li onClick={() =>handleMenu("Products")} className="nk-menu-item">

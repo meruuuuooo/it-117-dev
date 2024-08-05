@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 
 
-
-
 import Main from "./components/main/main"
 import Login from "./components/auth/Login"
 

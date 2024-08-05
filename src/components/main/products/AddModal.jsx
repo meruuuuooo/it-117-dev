@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../../config/firestore";
+// import { collection, addDoc } from "firebase/firestore";
+// import { db } from "../../../config/firestore";
 
 import Swal from "sweetalert2";
 
@@ -12,12 +12,13 @@ const Modal = ({ getProducts, products }) => {
 	const [description, setDescription] = useState("none");
 	const [price, setPrice] = useState();
 	const [quantityInStock, setQuantityInStock] = useState();
-	const [image, setImage] = useState("");
+	const [image, setImage] = useState("public/images/example/example.png");
 	const [category, setCategory] = useState("Uncategorized");
 
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
-
+	
+		// Validate required fields
 		if (
 			!name ||
 			!model ||
@@ -33,7 +34,7 @@ const Modal = ({ getProducts, products }) => {
 				showConfirmButton: true,
 			});
 		}
-
+	
 		const newProduct = {
 			name,
 			model,
@@ -44,38 +45,53 @@ const Modal = ({ getProducts, products }) => {
 			image,
 			category,
 		};
-
-		products.push(newProduct);
-
+	
 		try {
-			await addDoc(collection(db, "products"), {
-				...newProduct,
+			// Send POST request to JSON-server to add the new product
+			const response = await fetch('http://localhost:3000/products', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(newProduct)
 			});
-
-			const modalElement = document.getElementById("modalForm");
-			const modalInstance = bootstrap.Modal.getInstance(modalElement);
-			modalInstance.hide();
-
+	
+			if (response.ok) {
+				const modalElement = document.getElementById("modalForm");
+				const modalInstance = bootstrap.Modal.getInstance(modalElement);
+				modalInstance.hide();
+	
+				Swal.fire({
+					icon: "success",
+					title: "Success!",
+					text: "Product added successfully.",
+					showConfirmButton: true,
+				});
+	
+				setName("");
+				setModel("");
+				setManufacturer("");
+				setDescription("none");
+				setPrice("");
+				setQuantityInStock("");
+				setImage("");
+				setCategory("Uncategorized");
+				
+				getProducts();
+			} else {
+				throw new Error('Failed to add product');
+			}
+		} catch (error) {
+			console.log("Error adding product: ", error);
 			Swal.fire({
-				icon: "success",
-				title: "Success!",
-				text: "Product added successfully.",
+				icon: "error",
+				title: "Error!",
+				text: "Failed to add product.",
 				showConfirmButton: true,
 			});
-
-			setName("");
-			setModel("");
-			setManufacturer("");
-			setDescription("none");
-			setPrice("");
-			setQuantityInStock("");
-			setImage("");
-			setCategory("Uncategorized");
-		} catch (error) {
-			console.log("Error adding document: ", error);
 		}
-		getProducts();
 	};
+	
 
 	const categories = [
 		"Case",
@@ -221,7 +237,6 @@ const Modal = ({ getProducts, products }) => {
 											type="file"
 											className="form-control"
 											id="product-image"
-											value={image}
 											onChange={(e) => setImage(e.target.value)}
 										/>
 									</div>
