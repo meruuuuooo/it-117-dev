@@ -3,10 +3,10 @@
     {
       "name": "Cat5 Ethernet Cable",
       "model": "Cat5",
-      "description": "Basic Ethernet cable suitable for standard networking needs.",
       "manufacturer": "Generic",
+      "description": "Basic Ethernet cable suitable for standard networking needs.",
       "price": 164.45,
-      "quantityInStock": 500,
+      "quantityInStock": -4,
       "image": "public/images/ethernet-cable/1.jpg",
       "category": "Ethernet Cable",
       "id": "80a3"
@@ -17,7 +17,7 @@
       "description": "Enhanced version of Cat5, offering better performance and less crosstalk.",
       "manufacturer": "Generic",
       "price": 219.45,
-      "quantityInStock": 393,
+      "quantityInStock": 372,
       "image": "public/images/ethernet-cable/2.jpg",
       "category": "Ethernet Cable",
       "id": "a870"
@@ -28,7 +28,7 @@
       "description": "High-performance cable ideal for Gigabit Ethernet.",
       "manufacturer": "Generic",
       "price": 329.45,
-      "quantityInStock": 297,
+      "quantityInStock": 290,
       "image": "public/images/ethernet-cable/3.jpg",
       "category": "Ethernet Cable",
       "id": "46d2"
@@ -50,7 +50,7 @@
       "description": "High-performance cable with advanced shielding, suitable for data centers and high-speed applications.",
       "manufacturer": "Generic",
       "price": 549.45,
-      "quantityInStock": 150,
+      "quantityInStock": 143,
       "image": "public/images/ethernet-cable/5.jpg",
       "category": "Ethernet Cable",
       "id": "8f93"
@@ -83,7 +83,7 @@
       "description": "High-performance CPU air cooler with dual tower design and six heat pipes.",
       "manufacturer": "Thermalright",
       "price": 1864.5,
-      "quantityInStock": 99,
+      "quantityInStock": 94,
       "image": "public/images/cpu-cooler/1.jpg",
       "category": "CPU Cooler",
       "id": "8d21"
@@ -94,7 +94,7 @@
       "description": "High-end 360mm liquid cooler with customizable RGB lighting.",
       "manufacturer": "NZXT",
       "price": 15069.45,
-      "quantityInStock": 50,
+      "quantityInStock": 48,
       "image": "public/images/cpu-cooler/2.jpg",
       "category": "CPU Cooler",
       "id": "766d"
@@ -105,7 +105,7 @@
       "description": "High-performance 360mm liquid cooler with customizable RGB lighting.",
       "manufacturer": "Corsair",
       "price": 10449.45,
-      "quantityInStock": 60,
+      "quantityInStock": 58,
       "image": "public/images/cpu-cooler/4.jpg",
       "category": "CPU Cooler",
       "id": "e105"
@@ -116,7 +116,7 @@
       "description": "240mm liquid cooler with RGB lighting and quiet operation.",
       "manufacturer": "Cooler Master",
       "price": 5499.45,
-      "quantityInStock": 80,
+      "quantityInStock": 79,
       "image": "public/images/cpu-cooler/5.jpg",
       "category": "CPU Cooler",
       "id": "6699"
@@ -182,7 +182,7 @@
       "description": "ATX Mid Tower Case with Tinted Tempered Glass",
       "manufacturer": "Corsair",
       "price": 104.99,
-      "quantityInStock": 10,
+      "quantityInStock": 9,
       "image": "public/images/case/1.jpg",
       "category": "Case",
       "id": "9c3e"
@@ -193,7 +193,7 @@
       "description": "ATX Mid Tower Case with Tempered Glass",
       "manufacturer": "NZXT",
       "price": 94.99,
-      "quantityInStock": 15,
+      "quantityInStock": 14,
       "image": "public/images/case/2.jpg",
       "category": "Case",
       "id": "e2d1"
@@ -245,10 +245,10 @@
     {
       "name": "LG 65EP5G-B",
       "model": "65EP5G-B",
-      "description": "65-inch OLED monitor with 4K resolution, 120Hz refresh rate, and a 0.1ms response time.",
       "manufacturer": "LG",
+      "description": "65-inch OLED monitor with 4K resolution, 120Hz refresh rate, and a 0.1ms response time.",
       "price": 8499,
-      "quantityInStock": 0,
+      "quantityInStock": 47,
       "image": "public/images/monitor/1.jpg",
       "category": "Monitor",
       "id": "e4f9"
@@ -256,8 +256,8 @@
     {
       "name": "KOORUI 24E3",
       "model": "24E3",
-      "description": "24-inch IPS monitor with Full HD resolution and a 165Hz refresh rate.",
       "manufacturer": "KOORUI",
+      "description": "24-inch IPS monitor with Full HD resolution and a 165Hz refresh rate.",
       "price": 115.99,
       "quantityInStock": 0,
       "image": "public/images/monitor/2.jpg",
@@ -267,10 +267,10 @@
     {
       "name": "Asus TUF Gaming VG27AQ",
       "model": "TUF Gaming VG27AQ",
-      "description": "27-inch IPS monitor with 1440p resolution and a 165Hz refresh rate.",
       "manufacturer": "Asus",
+      "description": "27-inch IPS monitor with 1440p resolution and a 165Hz refresh rate.",
       "price": 299.89,
-      "quantityInStock": 0,
+      "quantityInStock": "0",
       "image": "public/images/monitor/3.jpg",
       "category": "Monitor",
       "id": "928f"
@@ -344,10 +344,10 @@
     {
       "name": "Asus ROG Swift PG32UQX",
       "model": "ROG Swift PG32UQX",
-      "description": "32-inch IPS monitor with 4K resolution, 144Hz refresh rate, and a 4ms response time.",
       "manufacturer": "Asus",
+      "description": "32-inch IPS monitor with 4K resolution, 144Hz refresh rate, and a 4ms response time.",
       "price": 1889.99,
-      "quantityInStock": 0,
+      "quantityInStock": "99",
       "image": "public/images/monitor/10.jpg",
       "category": "Monitor",
       "id": "90cd"
@@ -479,7 +479,7 @@
       "description": "Affordable SSD with M.2 PCIe 4.0 X4 interface.",
       "manufacturer": "Kingston",
       "price": 60.99,
-      "quantityInStock": 75,
+      "quantityInStock": 71,
       "image": "public/images/storage/2.jpg",
       "category": "SSD",
       "id": "c4bf"
@@ -512,7 +512,7 @@
       "description": "Reliable SSD with M.2 PCIe 4.0 X4 interface.",
       "manufacturer": "Crucial",
       "price": 69.98,
-      "quantityInStock": 60,
+      "quantityInStock": 59,
       "image": "public/images/storage/5.jpg",
       "category": "SSD",
       "id": "f30d"
@@ -589,7 +589,7 @@
       "description": "Compact mini keyboard with Razer Purple Optical Clicky switches and RGB backlighting.",
       "manufacturer": "Razer",
       "price": 99.99,
-      "quantityInStock": 36,
+      "quantityInStock": 34,
       "image": "public/images/keyboards/2.jpg",
       "category": "Keyboard",
       "id": "3a9a"
@@ -688,7 +688,7 @@
       "description": "16 GB DDR4 RAM with a speed of 3200 MHz and black/yellow color.",
       "manufacturer": "Corsair",
       "price": 38.99,
-      "quantityInStock": 50,
+      "quantityInStock": 49,
       "image": "public/images/memory/1.jpg",
       "category": "Memory",
       "id": "a109"
@@ -699,7 +699,7 @@
       "description": "32 GB DDR4 RAM with a speed of 5600 MHz and black color.",
       "manufacturer": "Corsair",
       "price": 113.99,
-      "quantityInStock": 30,
+      "quantityInStock": 28,
       "image": "public/images/memory/2.jpg",
       "category": "Memory",
       "id": "f587"
@@ -710,7 +710,7 @@
       "description": "32 GB DDR5 RAM with a speed of 6000 MHz and black color.",
       "manufacturer": "G.Skill",
       "price": 117.99,
-      "quantityInStock": 25,
+      "quantityInStock": 24,
       "image": "public/images/memory/3.jpg",
       "category": "Memory",
       "id": "a724"
@@ -905,10 +905,10 @@
     {
       "name": "Logitech G502 Hero",
       "model": "G502 Hero",
-      "description": "Wired optical mouse with 25600 DPI, right-hand orientation, and black color.",
       "manufacturer": "Logitech",
+      "description": "Wired optical mouse with 25600 DPI, right-hand orientation, and black color.",
       "price": 39.99,
-      "quantityInStock": 25,
+      "quantityInStock": "50",
       "image": "public/images/mouse/1.jpg",
       "category": "Mouse",
       "id": "2624"
@@ -930,7 +930,7 @@
       "description": "Wired and wireless optical mouse with 32000 DPI, right-hand orientation, and black color.",
       "manufacturer": "Logitech",
       "price": 149,
-      "quantityInStock": 15,
+      "quantityInStock": 10,
       "image": "public/images/mouse/3.jpg",
       "category": "Mouse",
       "id": "5db5"
@@ -941,7 +941,7 @@
       "description": "Wired optical mouse with 26000 DPI, right-hand orientation, and black color.",
       "manufacturer": "Razer",
       "price": 49.98,
-      "quantityInStock": 20,
+      "quantityInStock": 18,
       "image": "public/images/mouse/4.jpg",
       "category": "Mouse",
       "id": "85d3"
@@ -1029,7 +1029,7 @@
       "description": "GeForce RTX 4070, core clock 1920 MHz, boost clock 2490 MHz, black color.",
       "manufacturer": "Gigabyte",
       "price": 581.19,
-      "quantityInStock": 8,
+      "quantityInStock": 6,
       "image": "public/images/video-card/2.jpg",
       "category": "Video Card",
       "id": "9423"
@@ -1123,17 +1123,6 @@
       "id": "b071"
     },
     {
-      "id": "3a19",
-      "name": "cat4",
-      "model": "asdasd",
-      "description": "none",
-      "manufacturer": "asd",
-      "price": "23",
-      "quantityInStock": "21",
-      "image": "",
-      "category": "CPU"
-    },
-    {
       "id": "8ae7",
       "name": "blablablas",
       "model": "asd",
@@ -1165,6 +1154,449 @@
       "quantityInStock": 118,
       "image": "public/images/example/example.png",
       "category": "Power Supply"
+    },
+    {
+      "id": "1fec",
+      "name": "cat4",
+      "model": "asd",
+      "description": "none",
+      "manufacturer": "asd",
+      "price": "21",
+      "quantityInStock": "2",
+      "image": "C:\\fakepath\\mob.png",
+      "category": "Memory"
+    },
+    {
+      "id": "4ec0",
+      "name": "asd",
+      "model": "asd",
+      "description": "none",
+      "manufacturer": "asd",
+      "price": "23",
+      "quantityInStock": "0",
+      "image": "",
+      "category": "CPU Cooler"
+    },
+    {
+      "id": "137b",
+      "name": "AMD Ryzen 5 7600X",
+      "model": "asd",
+      "description": "none",
+      "manufacturer": "asd",
+      "price": "22",
+      "quantityInStock": "2",
+      "image": "public/images/example/example.png",
+      "category": "Headphones"
+    },
+    {
+      "id": "d33e",
+      "name": "asd",
+      "model": "asd",
+      "description": "noneasd",
+      "manufacturer": "asd",
+      "price": "22",
+      "quantityInStock": "2",
+      "image": "public/images/example/example.png",
+      "category": "Ethernet Cable"
+    },
+    {
+      "id": "92e7",
+      "name": "gae",
+      "model": "asd",
+      "description": "none",
+      "manufacturer": "asd",
+      "price": "233",
+      "quantityInStock": "18",
+      "image": "public/images/example/example.png",
+      "category": "Power Supply"
+    },
+    {
+      "id": "cfd1",
+      "name": "blablablas",
+      "model": "asd",
+      "description": "none",
+      "manufacturer": "asd",
+      "price": "2",
+      "quantityInStock": 10,
+      "image": "public/images/example/example.png",
+      "category": "CPU"
+    },
+    {
+      "id": "280b",
+      "name": "cat4",
+      "model": "asdasasdasd",
+      "description": "none",
+      "manufacturer": "asdasd",
+      "price": "233",
+      "quantityInStock": "2",
+      "image": "public/images/example/example.png",
+      "category": "Ethernet Cable"
+    },
+    {
+      "id": "8aa4",
+      "name": "mahaw1",
+      "model": "sdadsad",
+      "description": "none",
+      "manufacturer": "12312",
+      "price": "2991",
+      "quantityInStock": "10",
+      "image": "public/images/example/example.png",
+      "category": "Uncategorized"
+    },
+    {
+      "id": "b41e",
+      "name": "sdadas",
+      "model": "dsdf",
+      "description": "none",
+      "manufacturer": "sdfdsfsf",
+      "price": "12323",
+      "quantityInStock": "12",
+      "image": "",
+      "category": "Monitor"
+    }
+  ],
+  "users": [
+    {
+      "fullName": "Mel David Abecia",
+      "displayName": "Ishtiyak",
+      "email": "info@softnio.com",
+      "phoneNumber": "+880",
+      "dateOfBirth": "02/24/2021",
+      "nationality": "Canadian",
+      "useFullNameToDisplay": true,
+      "address": {
+        "addressLine1": "2337 Kildeer Drive",
+        "addressLine2": "",
+        "state": "bayout",
+        "country": "United State"
+      },
+      "username": "meru",
+      "password": "meru123",
+      "role": "user",
+      "cart": [
+        {
+          "id": "a870-1722884345473",
+          "productId": "a870",
+          "name": "Cat5e Ethernet Cable",
+          "selectedLength": 100,
+          "totalAmount": 6583.5,
+          "quantity": 3,
+          "image": "public/images/ethernet-cable/2.jpg",
+          "category": "Ethernet Cable"
+        },
+        {
+          "id": "766d-1722885036894",
+          "productId": "766d",
+          "name": "NZXT Kraken Elite 360 RGB",
+          "selectedLength": 10,
+          "totalAmount": 30138.9,
+          "quantity": 2,
+          "image": "public/images/cpu-cooler/2.jpg",
+          "category": "CPU Cooler"
+        },
+        {
+          "id": "9423-1722886410687",
+          "productId": "9423",
+          "name": "Gigabyte WINDFORCE OC",
+          "selectedLength": 10,
+          "totalAmount": 1162.38,
+          "quantity": 2,
+          "image": "public/images/video-card/2.jpg",
+          "category": "Video Card"
+        },
+        {
+          "id": "a870-1722888134440",
+          "productId": "a870",
+          "name": "Cat5e Ethernet Cable",
+          "selectedLength": 10,
+          "totalAmount": 219.45,
+          "quantity": 1,
+          "image": "public/images/ethernet-cable/2.jpg",
+          "category": "Ethernet Cable"
+        },
+        {
+          "id": "cfd1-1722889012737",
+          "productId": "cfd1",
+          "name": "blablablas",
+          "selectedLength": 10,
+          "totalAmount": 24,
+          "quantity": 12,
+          "image": "public/images/example/example.png",
+          "category": "CPU"
+        },
+        {
+          "id": "6699-1722894535474",
+          "productId": "6699",
+          "name": "Cooler Master MASTERLIQUID ML240L RGB V2",
+          "selectedLength": 10,
+          "totalAmount": 5499.449999999999,
+          "quantity": 1,
+          "image": "public/images/cpu-cooler/5.jpg",
+          "category": "CPU Cooler"
+        }
+      ],
+      "id": "4c98"
+    },
+    {
+      "id": "f92b",
+      "name": "",
+      "username": "test1",
+      "password": "123",
+      "role": "admin",
+      "cart": [
+        {
+          "id": "46d2-1722888292702",
+          "productId": "46d2",
+          "name": "Cat6 Ethernet Cable",
+          "selectedLength": 10,
+          "totalAmount": 329.45,
+          "quantity": 1,
+          "image": "public/images/ethernet-cable/3.jpg",
+          "category": "Ethernet Cable"
+        }
+      ]
+    },
+    {
+      "id": "812b",
+      "fullName": "sansay",
+      "displayName": "meruu",
+      "email": "mailem.meldavid@gmail.com",
+      "phoneNumber": "0947534",
+      "dateOfBirth": "09/20/2002",
+      "nationality": "Filipino",
+      "useFullNameToDisplay": false,
+      "address": {
+        "addressLine1": "asdasd",
+        "addressLine2": "asdasd",
+        "state": "asdasd",
+        "country": "United State"
+      },
+      "username": "mel123",
+      "password": "123",
+      "role": "user",
+      "cart": [
+        {
+          "id": "c4bf-1722891650051",
+          "productId": "c4bf",
+          "name": "Kingston NV2",
+          "selectedLength": 10,
+          "totalAmount": 243.96,
+          "quantity": 4,
+          "image": "public/images/storage/2.jpg",
+          "category": "SSD"
+        }
+      ]
+    },
+    {
+      "id": "8877",
+      "fullName": "",
+      "displayName": "",
+      "email": "",
+      "phoneNumber": "",
+      "dateOfBirth": "",
+      "nationality": "",
+      "useFullNameToDisplay": false,
+      "address": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "state": "",
+        "country": ""
+      },
+      "username": "test1",
+      "password": "123",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "6571",
+      "fullName": "Mel David mailem",
+      "displayName": "mahaw",
+      "email": "mailem.meldavid@gmail.com",
+      "phoneNumber": "31231231",
+      "dateOfBirth": "2024-08-09",
+      "nationality": "Spanish",
+      "useFullNameToDisplay": false,
+      "address": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "state": "",
+        "country": ""
+      },
+      "username": "mahaw",
+      "password": "123",
+      "role": "user",
+      "cart": [
+        {
+          "id": "46d2-1722909071253",
+          "productId": "46d2",
+          "name": "Cat6 Ethernet Cable",
+          "selectedLength": 10,
+          "totalAmount": 329.45,
+          "quantity": 1,
+          "image": "public/images/ethernet-cable/3.jpg",
+          "category": "Ethernet Cable"
+        },
+        {
+          "id": "80a3-1722909078903",
+          "productId": "80a3",
+          "name": "Cat5 Ethernet Cable",
+          "selectedLength": 100,
+          "totalAmount": 1644.5,
+          "quantity": 1,
+          "image": "public/images/ethernet-cable/1.jpg",
+          "category": "Ethernet Cable"
+        },
+        {
+          "id": "a870-1722909085903",
+          "productId": "a870",
+          "name": "Cat5e Ethernet Cable",
+          "selectedLength": 10,
+          "totalAmount": 219.45,
+          "quantity": 1,
+          "image": "public/images/ethernet-cable/2.jpg",
+          "category": "Ethernet Cable"
+        },
+        {
+          "id": "a870-1722909096645",
+          "productId": "a870",
+          "name": "Cat5e Ethernet Cable",
+          "selectedLength": 10,
+          "totalAmount": 219.45,
+          "quantity": 1,
+          "image": "public/images/ethernet-cable/2.jpg",
+          "category": "Ethernet Cable"
+        },
+        {
+          "id": "e4f9-1722909299559",
+          "productId": "e4f9",
+          "name": "LG 65EP5G-B",
+          "selectedLength": 10,
+          "totalAmount": 25497,
+          "quantity": 3,
+          "image": "public/images/monitor/1.jpg",
+          "category": "Monitor"
+        },
+        {
+          "id": "e2d1-1722911945763",
+          "productId": "e2d1",
+          "name": "NZXT H5 Flow",
+          "selectedLength": 10,
+          "totalAmount": 94.98999999999998,
+          "quantity": 1,
+          "image": "public/images/case/2.jpg",
+          "category": "Case"
+        },
+        {
+          "id": "f30d-1722912509445",
+          "productId": "f30d",
+          "name": "Crucial P3 Plus",
+          "selectedLength": 10,
+          "totalAmount": 69.98,
+          "quantity": 1,
+          "image": "public/images/storage/5.jpg",
+          "category": "SSD"
+        },
+        {
+          "id": "5db5-1722912549078",
+          "productId": "5db5",
+          "name": "Logitech PRO X Superlight 2",
+          "selectedLength": 10,
+          "totalAmount": 149,
+          "quantity": 1,
+          "image": "public/images/mouse/3.jpg",
+          "category": "Mouse"
+        },
+        {
+          "id": "5db5-1722912554148",
+          "productId": "5db5",
+          "name": "Logitech PRO X Superlight 2",
+          "selectedLength": 10,
+          "totalAmount": 596,
+          "quantity": 4,
+          "image": "public/images/mouse/3.jpg",
+          "category": "Mouse"
+        },
+        {
+          "id": "85d3-1722912614057",
+          "productId": "85d3",
+          "name": "Razer Basilisk V3",
+          "selectedLength": 10,
+          "totalAmount": 99.95999999999998,
+          "quantity": 2,
+          "image": "public/images/mouse/4.jpg",
+          "category": "Mouse"
+        },
+        {
+          "id": "113b-1722921655067",
+          "productId": "113b",
+          "name": "KOORUI 24E3",
+          "selectedLength": 10,
+          "totalAmount": 347.97,
+          "quantity": 3,
+          "image": "public/images/monitor/2.jpg",
+          "category": "Monitor"
+        }
+      ]
+    },
+    {
+      "id": "bfe4",
+      "fullName": "",
+      "displayName": "",
+      "email": "",
+      "phoneNumber": "",
+      "dateOfBirth": "",
+      "nationality": "",
+      "useFullNameToDisplay": false,
+      "address": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "state": "",
+        "country": ""
+      },
+      "username": "admin69",
+      "password": "jerald69",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "9db9",
+      "fullName": "Mel David abecia",
+      "displayName": "",
+      "email": "mailem.meldavid@gmail.com",
+      "phoneNumber": "",
+      "dateOfBirth": "",
+      "nationality": "",
+      "useFullNameToDisplay": false,
+      "address": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "state": "",
+        "country": ""
+      },
+      "username": "test3",
+      "password": "123",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "43d5",
+      "fullName": "",
+      "displayName": "",
+      "email": "",
+      "phoneNumber": "",
+      "dateOfBirth": "",
+      "nationality": "",
+      "useFullNameToDisplay": false,
+      "address": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "state": "",
+        "country": ""
+      },
+      "username": "test4",
+      "password": "123",
+      "role": "user",
+      "cart": []
     }
   ]
 }

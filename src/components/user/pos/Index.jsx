@@ -6,14 +6,45 @@ import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 
 const Pos = ({ products }) => {
-	const [cart, setCart] = useState(
-		() => JSON.parse(localStorage.getItem("cart")) || []
-	);
+	const [cart, setCart] = useState([]);
 	const [selections, setSelections] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState("All");
 	const [search, setSearch] = useState("");
 	const [checkedItems, setCheckedItems] = useState([]);
 	const [selectAll, setSelectAll] = useState(false);
+
+	useEffect(() => {
+		const fetchCart = async () => {
+			const username = localStorage.getItem("username");
+
+			if (username) {
+				try {
+					const response = await fetch(
+						`http://localhost:3000/users?username=${username}`
+					);
+
+					if (!response.ok) {
+						throw new Error("Failed to fetch user data");
+					}
+
+					const [user] = await response.json();
+
+					if (user && Array.isArray(user.cart)) {
+						setCart(user.cart);
+					} else {
+						setCart([]);
+					}
+				} catch (error) {
+					console.error("Error fetching user cart:", error);
+					setCart([]);
+				}
+			} else {
+				setCart([]);
+			}
+		};
+
+		fetchCart();
+	}, []);
 
 	const categories = [
 		"All",
@@ -50,22 +81,21 @@ const Pos = ({ products }) => {
 
 	const addProductToCart = async (product) => {
 		const uniqueId = `${product.id}-${Date.now()}`;
-		const basePrice = product.price; // Base price from JSON
-		const selectedLength = product.selectedLength || 10; // Default to 10 meters if not selected
-		const totalAmount = (basePrice / 10) * selectedLength; // Adjusted price for selected length
+		const basePrice = product.price;
+		const selectedLength = product.selectedLength || 10;
+		const totalAmount = (basePrice / 10) * selectedLength;
 
 		const newCartItem = {
 			id: uniqueId,
 			productId: product.id,
 			name: product.name,
 			selectedLength,
-			totalAmount: totalAmount * product.quantity, // Format total amount
+			totalAmount: totalAmount * product.quantity,
 			quantity: product.quantity,
 			image: product.image,
 			category: product.category,
 		};
 
-		// Deduct the quantityInStock
 		const updatedProduct = {
 			...product,
 			quantityInStock: product.quantityInStock - product.quantity,
@@ -73,7 +103,7 @@ const Pos = ({ products }) => {
 
 		try {
 			// Update stock on JSON-server
-			const response = await fetch(
+			const stockResponse = await fetch(
 				`http://localhost:3000/products/${product.id}`,
 				{
 					method: "PATCH",
@@ -86,13 +116,52 @@ const Pos = ({ products }) => {
 				}
 			);
 
-			if (!response.ok) {
+			if (!stockResponse.ok) {
 				throw new Error("Failed to update the stock quantity");
 			}
 
-			// Add to cart and update localStorage
-			setCart((prevCart) => [...prevCart, newCartItem]);
-			localStorage.setItem("cart", JSON.stringify([...cart, newCartItem]));
+			// Fetch the user's data from JSON-server
+			const userResponse = await fetch(
+				`http://localhost:3000/users?username=${localStorage.getItem(
+					"username"
+				)}`
+			);
+
+			if (!userResponse.ok) {
+				throw new Error("Failed to fetch user data");
+			}
+
+			const [user] = await userResponse.json();
+
+			if (!user) {
+				throw new Error("User not found");
+			}
+
+			// Ensure that the cart is initialized as an array
+			const userCart = Array.isArray(user.cart) ? user.cart : [];
+
+			// Update the user's cart
+			const updatedCart = [...userCart, newCartItem];
+
+			// Save the updated cart back to JSON-server
+			const cartResponse = await fetch(
+				`http://localhost:3000/users/${user.id}`,
+				{
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						cart: updatedCart,
+					}),
+				}
+			);
+
+			if (!cartResponse.ok) {
+				throw new Error("Failed to update the user's cart");
+			}
+
+			setCart(updatedCart);
 
 			toast.success("Product added to cart", {
 				position: "top-right",
@@ -111,11 +180,12 @@ const Pos = ({ products }) => {
 						? {
 								...item,
 								quantityInStock: updatedProduct.quantityInStock,
-								quantity: 1,
+								quantity: 0,
 								selectedLength:
 									product.category === "Ethernet Cable" ? 10 : null,
 								isSelected: false,
-								selectedPrice: (product.price / 10) * 10,}
+								selectedPrice: (product.price / 10) * 10,
+						}
 						: item
 				)
 			);
@@ -201,23 +271,64 @@ const Pos = ({ products }) => {
 		);
 	};
 
-	const handleDelete = (id) => {
-		const updatedCart = cart.filter((item) => item.id !== id);
-		setCart(updatedCart);
+	const handleDelete = async (cartItemId) => {
+		try {
+			const username = localStorage.getItem("username");
 
-		// Update localStorage
-		localStorage.setItem("cart", JSON.stringify(updatedCart));
+			if (!username) {
+				throw new Error("No username found in localStorage.");
+			}
 
-		toast.success("Product removed from cart", {
-			position: "top-right",
-			autoClose: 400,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: false,
-			draggable: true,
-			progress: undefined,
-			theme: "light",
-		});
+			// Fetch the user data from the JSON server
+			const response = await fetch(
+				`http://localhost:3000/users?username=${username}`
+			);
+
+			if (!response.ok) {
+				throw new Error("Failed to fetch user data.");
+			}
+
+			const [user] = await response.json();
+
+			if (!user) {
+				throw new Error("User not found.");
+			}
+
+			// Filter out the specific item from the cart
+			const updatedCart = user.cart.filter((item) => item.id !== cartItemId);
+
+			// Update the cart on the JSON server
+			const updateResponse = await fetch(
+				`http://localhost:3000/users/${user.id}`,
+				{
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ cart: updatedCart }),
+				}
+			);
+
+			if (!updateResponse.ok) {
+				throw new Error("Failed to update the cart on the server.");
+			}
+
+			// Update the local state
+			setCart(updatedCart);
+
+			Swal.fire(
+				"Deleted!",
+				"The selected product has been removed from the cart.",
+				"success"
+			);
+		} catch (error) {
+			console.error("Error removing item from cart:", error);
+			Swal.fire(
+				"Error!",
+				"There was an error deleting the product from the cart.",
+				"error"
+			);
+		}
 	};
 
 	const handleDeleteSelected = async () => {
@@ -234,18 +345,52 @@ const Pos = ({ products }) => {
 
 		if (result.isConfirmed) {
 			try {
-				// Filter out checked items from the cart
-				const updatedCart = cart.filter(
+				const username = localStorage.getItem("username");
+
+				if (!username) {
+					throw new Error("No username found in localStorage.");
+				}
+
+				// Fetch the user data from the JSON server
+				const response = await fetch(
+					`http://localhost:3000/users?username=${username}`
+				);
+
+				if (!response.ok) {
+					throw new Error("Failed to fetch user data.");
+				}
+
+				const [user] = await response.json();
+
+				if (!user) {
+					throw new Error("User not found.");
+				}
+
+				// Filter out the selected items from the cart
+				const updatedCart = user.cart.filter(
 					(item) => !checkedItems.includes(item.id)
 				);
+
+				// Update the cart on the JSON server
+				const updateResponse = await fetch(
+					`http://localhost:3000/users/${user.id}`,
+					{
+						method: "PATCH",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({ cart: updatedCart }),
+					}
+				);
+
+				if (!updateResponse.ok) {
+					throw new Error("Failed to update the cart on the server.");
+				}
+
+				// Update the local state
 				setCart(updatedCart);
-
-				// Update localStorage
-				localStorage.setItem("cart", JSON.stringify(updatedCart));
-
-				// Clear the selection
-				setCheckedItems([]);
-				setSelectAll(false);
+				setCheckedItems([]); // Clear the selection
+				setSelectAll(false); // Uncheck the 'select all' box
 
 				Swal.fire(
 					"Deleted!",
@@ -253,10 +398,10 @@ const Pos = ({ products }) => {
 					"success"
 				);
 			} catch (error) {
-				console.log("Error removing documents: ", error);
+				console.error("Error removing selected items from cart:", error);
 				Swal.fire(
 					"Error!",
-					"There was an error deleting the products.",
+					"There was an error deleting the selected products from the cart.",
 					"error"
 				);
 			}
@@ -351,27 +496,6 @@ const Pos = ({ products }) => {
 															</div>
 														</div>
 													</li>
-													<li
-														data-bs-toggle="modal"
-														data-bs-target="#modalTop"
-														className="nk-block-tools-opt"
-													>
-														<a
-															href="#"
-															data-target="addProduct"
-															className="toggle btn btn-icon btn-primary d-md-none"
-														>
-															<em className="icon ni ni-cart"></em>
-														</a>
-														<a
-															href="#"
-															data-target="addProduct"
-															className="toggle btn btn-primary d-none d-md-inline-flex"
-														>
-															<em className="icon ni ni-cart"></em>
-															<span>View Cart</span>
-														</a>
-													</li>
 												</ul>
 											</div>
 										</div>
@@ -395,12 +519,32 @@ const Pos = ({ products }) => {
 																alt={selection.name}
 															/>
 														</a>
+														{/* <div className="modal fade zoom" tabIndex="-1" id="modalZoom">
+															<div className="modal-dialog" role="document">
+																<div className="modal-content">
+																	<div className="modal-header">
+																		<h5 className="modal-title">{selection.name}</h5>
+																		<a href="#" className="close" data-bs-dismiss="modal" aria-label="Close">
+																			<em className="icon ni ni-cross"></em>
+																		</a>
+																	</div>
+																	<div className="modal-body">
+																		<p>{selection.description}</p>
+																	</div>
+																	<div className="modal-footer bg-light">
+																		<span className="sub-text">Modal Footer Text</span>
+																	</div>
+																</div>
+															</div>
+														</div> */}
 														<ul className="product-badges">
 															<li>
 																<span className="badge bg-success">
-																	{selection.quantityInStock > 0
-																		? "In Stock"
-																		: "Out of Stock"}
+																	{selection.quantityInStock === 0
+																		? "Out of Stock"
+																		: selection.quantityInStock <= 20
+																		? "Low Stock"
+																		: "Available"}
 																</span>
 															</li>
 														</ul>
@@ -419,11 +563,6 @@ const Pos = ({ products }) => {
 																<span className="badge bg-outline-danger">
 																	&#x20B1;
 																	{Number(selection.selectedPrice).toFixed(2)}
-																</span>
-															</li>
-															<li className="preview-item">
-																<span className="badge bg-outline-info">
-																	Stock: {selection.quantityInStock}
 																</span>
 															</li>
 														</ul>
@@ -479,6 +618,7 @@ const Pos = ({ products }) => {
 																	}
 																	type="button"
 																	className="btn btn-outline-primary"
+																	disabled={selection.quantityInStock === 0}
 																>
 																	+
 																</button>
@@ -488,11 +628,15 @@ const Pos = ({ products }) => {
 															className="btn btn-primary btn-block mt-3"
 															type="button"
 															onClick={() => addProductToCart(selection)}
-															disabled={selection.quantityInStock === 0}
+															disabled={
+																selection.quantityInStock === 0 ||
+																selection.quantity === 0
+															}
 														>
-															{selection.quantityInStock === 0
-																? "Out of Stock"
-																: "Add to Cart"}
+															{selection.quantityInStock === 0 ||
+															selection.quantity === 0
+																? "Not Available"
+																: "Buy Now"}
 														</button>
 													</div>
 												</div>
@@ -508,7 +652,9 @@ const Pos = ({ products }) => {
 								>
 									<div className="modal-content">
 										<div className="modal-header">
-											<h5 className="modal-title">Cart</h5>
+											<h5 className="modal-title">
+												Order History ({cart.length})
+											</h5>
 											<a
 												href="#"
 												className="close"
@@ -641,7 +787,7 @@ const Pos = ({ products }) => {
 																</div>
 																<div className="nk-tb-col">
 																	<span className="tb-lead">
-																	&#x20B1;{item.totalAmount.toFixed(2)}
+																		&#x20B1;{item.totalAmount.toFixed(2)}
 																	</span>
 																</div>
 																<div className="nk-tb-col">
@@ -723,7 +869,7 @@ const Pos = ({ products }) => {
 																	</ul>
 																</div>
 															</div>
-												))}
+													))}
 											</div>
 										</div>
 										<div className="modal-footer bg-light">

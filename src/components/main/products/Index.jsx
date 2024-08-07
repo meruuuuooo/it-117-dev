@@ -4,6 +4,8 @@ import { useState } from "react";
 // import { db } from "../../../config/firestore";
 // import ImportDataButton from "./importDataToFirestore";
 
+import axios from "axios";
+
 import Swal from "sweetalert2";
 import Modal from "./AddModal";
 
@@ -12,6 +14,86 @@ const Products = ({ products, setProducts, getProducts }) => {
 	const [search, setSearch] = useState("");
 	const [checkedItems, setCheckedItems] = useState([]);
 	const [selectAll, setSelectAll] = useState(false);
+
+	const [name, setName] = useState("");
+	const [model, setModel] = useState("");
+	const [manufacturer, setManufacturer] = useState("");
+	const [description, setDescription] = useState("none");
+	const [price, setPrice] = useState();
+	const [quantityInStock, setQuantityInStock] = useState();
+	const [image, setImage] = useState("public/images/example/example.png");
+	const [category, setCategory] = useState("Uncategorized");
+
+	const [productId, setProductId] = useState("");
+
+	const handleEditClick = (product) => {
+		setProductId(product.id);
+		setName(product.name);
+		setModel(product.model);
+		setManufacturer(product.manufacturer);
+		setDescription(product.description);
+		setPrice(product.price);
+		setQuantityInStock(product.quantityInStock);
+		setImage(product.image);
+		setCategory(product.category);
+	};
+
+	const handleUpdateFormSubmit = async (e) => {
+		e.preventDefault();
+
+		const id = productId;
+	
+		// Create the updated product object
+		const updatedProduct = {
+			name,
+			model,
+			manufacturer,
+			description,
+			price,
+			quantityInStock,
+			image,
+			category,
+		};
+	
+		try {
+			// Send a PUT request to update the product on the JSON server
+			const response = await axios.put(`http://localhost:3000/products/${id}`, updatedProduct);
+	
+			if (response.status === 200) {
+
+				const modalElement = document.getElementById("updatedModalForm");
+				const modalInstance = bootstrap.Modal.getInstance(modalElement);
+				modalInstance.hide();
+
+				Swal.fire({
+					icon: 'success',
+					title: 'Product Updated',
+					text: 'The product was updated successfully!',
+					timer: 2000,
+					showConfirmButton: false,
+				});
+
+				getProducts();
+	
+			} else {
+				// Handle any errors
+				Swal.fire({
+					icon: 'error',
+					title: 'Update Failed',
+					text: 'Failed to update the product. Please try again.',
+				});
+			}
+		} catch (error) {
+			// Handle any errors that occur during the request
+			console.error("Error updating the product:", error);
+			Swal.fire({
+				icon: 'error',
+				title: 'Error',
+				text: 'An error occurred while updating the product. Please try again.',
+			});
+		}
+	};
+	
 
 	const categories = [
 		"All",
@@ -344,7 +426,7 @@ const Products = ({ products, setProducts, getProducts }) => {
 													<span className="tb-sub">{product.manufacturer}</span>
 												</div>
 												<div className="nk-tb-col">
-													<span className="tb-lead">$ {product.price}</span>
+													<span className="tb-lead">&#x20B1; {product.price}</span>
 												</div>
 												<div className="nk-tb-col">
 													<span className="tb-sub">
@@ -375,6 +457,16 @@ const Products = ({ products, setProducts, getProducts }) => {
 																</a>
 																<div className="dropdown-menu dropdown-menu-end">
 																	<ul className="link-list-opt no-bdr">
+																		<li 
+																			data-bs-toggle="modal"
+																			data-bs-target="#updatedModalForm"
+																			onClick={() => handleEditClick(product)}			
+																		>
+																			<a href="#">
+																				<em className="icon ni ni-edit"></em>
+																				<span>Edit Product</span>
+																			</a>
+																		</li>
 																		<li>
 																			<a href="#">
 																				<em className="icon ni ni-eye"></em>
@@ -413,6 +505,172 @@ const Products = ({ products, setProducts, getProducts }) => {
 											</div>
 										))
 									)}
+								</div>
+							</div>
+							<div className="modal fade" id="updatedModalForm">
+								<div className="modal-dialog" role="document">
+									<div className="modal-content">
+										<div className="modal-header">
+											<h5 className="modal-title">Update Info</h5>
+											<a
+												href="#"
+												className="close"
+												data-bs-dismiss="modal"
+												aria-label="Close"
+											>
+												<em className="icon ni ni-cross"></em>
+											</a>
+										</div>
+										<div className="modal-body">
+											<form
+												onSubmit={handleUpdateFormSubmit}
+												className="form-validate is-alter"
+											>
+												<div className="form-group">
+													<label className="form-label" htmlFor="product-name">
+														Name
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="text"
+															className="form-control"
+															id="full-name"
+															value={name}
+															required
+															onChange={(e) => setName(e.target.value)}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label" htmlFor="model">
+														Model
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="text"
+															className="form-control"
+															id="model"
+															value={model}
+															onChange={(e) => setModel(e.target.value)}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label" htmlFor="manufacturer">
+														manufacturer
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="text"
+															className="form-control"
+															id="manufacturer"
+															value={manufacturer}
+															onChange={(e) => setManufacturer(e.target.value)}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label" htmlFor="description">
+														Description
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="text"
+															className="form-control"
+															id="description"
+															value={description}
+															onChange={(e) => setDescription(e.target.value)}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label" htmlFor="price">
+														Price
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="number"
+															className="form-control"
+															id="price"
+															value={price}
+															onChange={(e) => setPrice(e.target.value)}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label" htmlFor="product-stock">
+														Stock
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="number"
+															className="form-control"
+															id="product-stock"
+															value={quantityInStock}
+															onChange={(e) =>
+																setQuantityInStock(e.target.value)
+															}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label" htmlFor="product-image">
+														Upload Image
+													</label>
+													<div className="form-control-wrap">
+														<input
+															type="file"
+															className="form-control"
+															id="product-image"
+															onChange={(e) => setImage(e.target.value)}
+														/>
+													</div>
+												</div>
+												<div className="form-group">
+													<label className="form-label">Category</label>
+													<ul className="custom-control-group g-3 align-center">
+														{categories.map((categoryList, index) => {
+															const id = `com-${categoryList
+																.toLowerCase()
+																.replace(/ /g, "-")}`;
+															return (
+																<li key={index}>
+																	<div className="custom-control custom-control-sm custom-radio">
+																		<input
+																			type="radio"
+																			className="custom-control-input"
+																			id={id}
+																			name="category"
+																			checked={category === categoryList}
+																			onChange={() =>
+																				handleCategoryChange(categoryList)
+																			}
+																		/>
+																		<label
+																			className="custom-control-label"
+																			htmlFor={id}
+																		>
+																			{categoryList.toLowerCase()}
+																		</label>
+																	</div>
+																</li>
+															);
+														})}
+													</ul>
+												</div>
+												<div className="modal-footer">
+													<div className="form-group">
+														<button
+															type="submit"
+															className="btn btn-lg btn-primary"
+														>
+															Save Information
+														</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

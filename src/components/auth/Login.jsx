@@ -1,28 +1,45 @@
-import { useState } from 'react'
+import { useState } from "react";
+import axios from "axios";
 
-const Login = ({ setIsAuthenticated }) => {
+const Login = ({ setIsAuthenticated, setRole }) => {
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+	const [error, setError] = useState("");
+	const [Invalid, setInvalid] = useState();
 
-    const adminUsername = "Meruuuuooo"
-    const adminPassword = "admin123"
+	const handleLogin = async (e) => {
+		e.preventDefault();
 
-    const [username, setUsername] = useState("Meruuuuooo")
-    const [password, setPassword] = useState("admin123")
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+		try {
+			// Make a request to json-server to get the user by username
+			const response = await axios.get(`http://localhost:3000/users?username=${username}`);
+			const user = response.data[0]; // Assuming email is unique and we get one user
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+			if (user && user.password === password) {
+				localStorage.setItem("is_authenticated", JSON.stringify(true));
+				localStorage.setItem("role", user.role); // Store the role from user data
+				localStorage.setItem("username", user.username)
+				localStorage.setItem("email", user.email)
+				localStorage.setItem("fullName", user.fullName)
+				localStorage.setItem("displayName", user.displayName)
+				setIsAuthenticated(true);
+				setRole(user.role);
+				setInvalid(false);
+				setError("");
+			} else {
+				setError("Invalid username or password"); // Show error message
+				setInvalid(true);
+			}
+		} catch (error) {
+			console.error("Error during login:", error);
+			setError("An error occurred during login"); // Show error message
+		}
+	};
 
-        if (username === adminUsername && password === adminPassword) {
-			localStorage.setItem("is_authenticated", true);
-            setIsLoggedIn(true);
-			setIsAuthenticated(true);
-        }
-    }
 
-
-    return (
-        <>
-            <div className="nk-app-root">
+	return (
+		<>
+			<div className="nk-app-root">
 				<div className="nk-main">
 					<div className="nk-wrap nk-wrap-nosidebar">
 						<div className="nk-content">
@@ -52,16 +69,16 @@ const Login = ({ setIsAuthenticated }) => {
 												<h5 className="nk-block-title">Sign-In</h5>
 												<div className="nk-block-des">
 													<p>
-														Mog everyone in LookMaxxing, using your email and
+														Buy anything in mahaw POS, using your email and
 														passcode.
 													</p>
 												</div>
 											</div>
 										</div>
 
-										{isLoggedIn && (
+										{Invalid && (
 											<div className="alert alert-danger">
-												<b>Invalid = MOGGED</b>. Please Try Again
+												<b>{error}</b>
 											</div>
 										)}
 
@@ -125,6 +142,7 @@ const Login = ({ setIsAuthenticated }) => {
 												</button>
 											</div>
 										</form>
+										<p> <a href="/register">Register Here!</a></p>
 									</div>
 									<div className="nk-block nk-auth-footer">
 										<div className="nk-block-between">
@@ -202,7 +220,7 @@ const Login = ({ setIsAuthenticated }) => {
 											</ul>
 										</div>
 										<div className="mt-3">
-											<p>&copy; 2022 LookMaxxing. All Rights Reserved.</p>
+											<p>&copy; 2024 POS MAHAW. All Rights Reserved.</p>
 										</div>
 									</div>
 								</div>
@@ -211,8 +229,8 @@ const Login = ({ setIsAuthenticated }) => {
 					</div>
 				</div>
 			</div>
-        </>
-    )
-}
+		</>
+	);
+};
 
-export default Login
+export default Login;
